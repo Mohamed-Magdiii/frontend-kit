@@ -21,7 +21,7 @@ import RightSidebar from "../CommonForBoth/RightSidebar"
 import LightDark from "../CommonForBoth/Menus/LightDark";
 
 // import images
-import logoSvg from "../../assets/images/logo-sm.svg"
+import logoSvg from "../../assets/images/favicon.png"
 import github from "../../assets/images/brands/github.png"
 import bitbucket from "../../assets/images/brands/bitbucket.png"
 import dribbble from "../../assets/images/brands/dribbble.png"
@@ -84,7 +84,8 @@ const Header = props => {
                   <img src={logoSvg} alt="" height="24" />
                 </span>
                 <span className="logo-lg">
-                  <img src={logoSvg} alt="" height="24" /> <span className="logo-txt">Minia</span>
+                  <img src={logoSvg} alt="" height="24" />
+                   <span className="logo-txt">Orient</span>
                 </span>
               </Link>
 
@@ -93,7 +94,7 @@ const Header = props => {
                   <img src={logoSvg} alt="" height="24" />
                 </span>
                 <span className="logo-lg">
-                  <img src={logoSvg} alt="" height="24" /> <span className="logo-txt">Minia</span>
+                  <img src={logoSvg} alt="" height="24" /> <span className="logo-txt">Orient</span>
                 </span>
               </Link>
             </div>
@@ -179,12 +180,12 @@ const Header = props => {
               </div>
             </div>
 
-            <LanguageDropdown />
+            {/* <LanguageDropdown /> */}
 
             {/* light / dark mode */}
             <LightDark layoutMode={props['layoutMode']} onChangeLayoutMode={onChangeLayoutMode} />
 
-            <Dropdown
+            {/* <Dropdown
               className="d-none d-lg-inline-block ms-1"
               isOpen={socialDrp}
               toggle={() => {
@@ -245,10 +246,10 @@ const Header = props => {
                   </Row>
                 </div>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
 
-            <NotificationDropdown />
-            <div
+            {/* <NotificationDropdown /> */}
+            {/* <div
               onClick={toggleTopDrawer} disabled={open}
               className="dropdown d-inline-block"
             >
@@ -261,7 +262,7 @@ const Header = props => {
                   className="icon-lg"
                 />
               </button>
-            </div>
+            </div> */}
             <ProfileMenu />
 
           </div>

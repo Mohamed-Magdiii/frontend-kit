@@ -39,38 +39,8 @@ const Login = props => {
     dispatch(loginUser(values, props.history))
   }
 
-  const signIn = (res, type) => {
-    if (type === "google" && res) {
-      const postData = {
-        name: res.profileObj.name,
-        email: res.profileObj.email,
-        token: res.tokenObj.access_token,
-        idToken: res.tokenId,
-      }
-      dispatch(socialLogin(postData, props.history, type))
-    } else if (type === "facebook" && res) {
-      const postData = {
-        name: res.name,
-        email: res.email,
-        token: res.accessToken,
-        idToken: res.tokenId,
-      }
-      dispatch(socialLogin(postData, props.history, type))
-    }
-  }
 
-  //handleGoogleLoginResponse
-  const googleResponse = response => {
-    signIn(response, "google")
-  }
 
-  //handleTwitterLoginResponse
-  // const twitterResponse = e => {}
-
-  //handleFacebookLoginResponse
-  const facebookResponse = response => {
-    signIn(response, "facebook")
-  }
 
   return (
     <React.Fragment>
@@ -86,13 +56,13 @@ const Login = props => {
                   <div className="d-flex flex-column h-100">
                     <div className="mb-4 mb-md-5 text-center">
                       <Link to="/dashboard" className="d-block auth-logo">
-                        <img src={logo} alt="" height="28" /> <span className="logo-txt">Minia</span>
+                        <img src={logo} alt="" height="28" /> <span className="logo-txt">Orient</span>
                       </Link>
                     </div>
                     <div className="auth-content my-auto">
                       <div className="text-center">
                         <h5 className="mb-0">Welcome Back !</h5>
-                        <p className="text-muted mt-2">Sign in to continue to Minia.</p>
+                        <p className="text-muted mt-2">Sign in to continue to Orient.</p>
                       </div>
                       <AvForm
                         className="custom-form mt-4 pt-2"
@@ -105,7 +75,7 @@ const Login = props => {
                           <AvField
                             name="email"
                             label="Email"
-                            value="admin@themesbrand.com"
+                            value="admin@orient.com"
                             className="form-control"
                             placeholder="Enter email"
                             type="email"
@@ -117,11 +87,11 @@ const Login = props => {
                             <div className="flex-grow-1">
                               <label className="form-label">Password</label>
                             </div>
-                            <div className="flex-shrink-0">
+                            {/* <div className="flex-shrink-0">
                               <div className="">
                                 <Link to="/auth-recoverpw" className="text-muted">Forgot password?</Link>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
 
                           <div className="mb-3">
@@ -154,41 +124,7 @@ const Login = props => {
                       <div className="mt-4 text-center">
                         <h5 className="font-size-14 mb-3">Sign in with</h5>
 
-                        <ul className="list-inline">
-                          <li className="list-inline-item">
-                            <FacebookLogin
-                              appId={facebook.APP_ID}
-                              autoLoad={false}
-                              callback={facebookResponse}
-                              render={renderProps => (
-                                <Link
-                                  to="#"
-                                  className="social-list-item bg-primary text-white border-primary"
-                                  onClick={renderProps.onClick}
-                                >
-                                  <i className="mdi mdi-facebook" />
-                                </Link>
-                              )}
-                            />
-                          </li>
-
-                          <li className="list-inline-item">
-                            <GoogleLogin
-                              clientId={google.CLIENT_ID}
-                              render={renderProps => (
-                                <Link
-                                  to="#"
-                                  className="social-list-item bg-danger text-white border-danger"
-                                  onClick={renderProps.onClick}
-                                >
-                                  <i className="mdi mdi-google" />
-                                </Link>
-                              )}
-                              onSuccess={googleResponse}
-                              onFailure={() => { }}
-                            />
-                          </li>
-                        </ul>
+                  
                       </div>
 
                       <div className="mt-5 text-center">
@@ -197,7 +133,7 @@ const Login = props => {
                       </div>
                     </div>
                     <div className="mt-4 mt-md-5 text-center">
-                      <p className="mb-0">© {new Date().getFullYear()} Minia . Crafted with <i className="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                      <p className="mb-0">© {new Date().getFullYear()} orient . Crafted with <i className="mdi mdi-heart text-danger"></i></p>
                     </div>
                   </div>
                 </div>

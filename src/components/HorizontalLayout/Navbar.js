@@ -108,7 +108,7 @@ const Navbar = (props) => {
                     className="nav-link dropdown-toggle arrow-none"
                   >
                     <FeatherIcon icon="briefcase" />
-                    {props.t("Elements")} <div className="arrow-down"></div>
+                    {/* {props.t("Elements")} <div className="arrow-down"></div> */}
                   </Link>
                   <div
                     className={classname(

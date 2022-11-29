@@ -1,14 +1,12 @@
 import axios from "axios"
-import accessToken from "./jwt-token-access/accessToken"
 
 //pass new generated access token here
-const token = accessToken
+const token = localStorage.getItem('authUser')
 
 //apply base url for axios
-const API_URL = ""
-
+const API_URL = process.env.REACT_APP_API_URL
 const axiosApi = axios.create({
-  baseURL: API_URL,
+  baseURL: API_URL
 })
 
 axiosApi.defaults.headers.common["Authorization"] = token
